@@ -3,6 +3,9 @@
 
 🌐 **Live Demo:** [taskycal.vercel.app](https://taskycal.vercel.app)
 
+<img width="1024" height="1024" alt="tasky" src="https://github.com/user-attachments/assets/a3e8ccf9-2218-48f7-9d04-d0c261ad8436" />
+
+
 ---
 
 ## Overview

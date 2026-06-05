@@ -76,9 +76,9 @@ const Mascot = ({ darkMode }) => {
     return (
       <div style={{
         width: '100%',
-        height: '1px',
+        height: '100px',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'visible',
         marginBottom: '8px',
       }}>
         <div style={{
@@ -92,6 +92,7 @@ const Mascot = ({ darkMode }) => {
           transition: state.visible
             ? 'transform 0.9s cubic-bezier(0.22,1.4,0.36,1)'
             : 'transform 0.65s cubic-bezier(0.4,0,0.6,1)',
+          zIndex: 5,
         }}>
           <img
             src={'/mascots/' + state.img + '.png'}

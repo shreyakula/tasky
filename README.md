@@ -110,6 +110,4 @@ alter table events add constraint events_user_event_unique unique (user_id, even
 - Creating complex canvas-based animations and particle systems
 - Deploying a production app with environment variable management
 
----
 
-*Built with love by Shreya* 🌸

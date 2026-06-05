@@ -1,16 +1,112 @@
-# React + Vite
+# tasky♥
+### *the calendar that thinks ahead*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 **Live Demo:** [taskycal.vercel.app](https://taskycal.vercel.app)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+**tasky** is a full-stack AI-powered calendar application built with React. It combines a beautifully animated, dreamy UI with real productivity features — letting users manage their week through natural conversation with an AI assistant.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**AI Chatbot Assistant**
+- Understands natural language commands like *"add gym tomorrow at 7am"* or *"am I free Friday at 3pm?"*
+- Can add, update, and delete calendar events through conversation
+- Powered by Groq (LLaMA 3.3 70B)
+
+**Calendar**
+- Full 24-hour weekly view with smooth vertical scrolling
+- Click any time slot to add an event with title, date range, time, category, location, and link
+- Events persist across sessions via Supabase
+
+**Authentication**
+- Secure email and password sign up and login via Supabase Auth
+- Each user's events are private and protected with row-level security
+
+**Design**
+- Dreamy animated pastel sky background with floating dandelion seeds and glowing particles
+- Kawaii sun and moon mascots that peek from behind the calendar
+- Dark mode with a deep navy night sky, gold stars, and glowing mushrooms
+- Fully responsive glassmorphism UI
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18, Vite |
+| Styling | Custom CSS, Glassmorphism, Canvas API |
+| Auth + Database | Supabase |
+| AI | Groq API (LLaMA 3.3 70B) |
+| Animations | HTML5 Canvas, CSS animations |
+| Deployment | Vercel |
+
+---
+
+## Running Locally
+
+```bash
+git clone https://github.com/shreyakula/tasky.git
+cd tasky
+npm install
+```
+
+Create a `.env` file in the root:
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_GROQ_API_KEY=your_groq_api_key
+
+```bash
+npm run dev
+```
+
+---
+
+## Database Setup
+
+Run this in Supabase SQL Editor:
+
+```sql
+create table events (
+  id uuid default gen_random_uuid() primary key,
+  user_id uuid references auth.users not null,
+  event_key text not null,
+  title text not null,
+  start_date text,
+  end_date text,
+  start_time text,
+  end_time text,
+  location text,
+  link text,
+  color text,
+  category text,
+  created_at timestamp default now()
+);
+
+alter table events enable row level security;
+
+create policy "Users can only access their own events"
+on events for all
+using (auth.uid() = user_id);
+
+alter table events add constraint events_user_event_unique unique (user_id, event_key);
+```
+
+---
+
+## What I Learned
+
+- Building a full-stack app from scratch with React and Supabase
+- Implementing secure user authentication with row-level security
+- Integrating AI APIs to create a natural language calendar assistant
+- Creating complex canvas-based animations and particle systems
+- Deploying a production app with environment variable management
+
+---
+
+*Built with love by Shreya* 🌸

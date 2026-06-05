@@ -938,3 +938,11 @@
     font-size: 14px !important;
   }
 }
+
+.app {
+  background-attachment: fixed !important;
+}
+
+.app-content {
+  min-height: 100vh !important;
+}

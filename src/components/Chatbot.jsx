@@ -114,9 +114,9 @@ const Chatbot = ({ events, darkMode, onAddEvent, onDeleteEvent }) => {
 
   return (
     <>
-      <div style={{ position: 'fixed', bottom: '28px', right: '28px', zIndex: 50, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ position: 'fixed', bottom: '28px', left: '28px', zIndex: 50, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {!open && (
-          <div style={{ position: 'absolute', bottom: '72px', right: '0px', background: 'white', borderRadius: '16px 16px 4px 16px', padding: '6px 12px', fontSize: '12px', fontFamily: 'Quicksand, sans-serif', fontWeight: 700, color: '#7c5cbf', boxShadow: '0 2px 12px rgba(155,127,212,0.25)', whiteSpace: 'nowrap' }}>
+          <div style={{ position: 'absolute', bottom: '72px', left: '0px', background: 'white', borderRadius: '16px 16px 16px 4px', padding: '6px 12px', fontSize: '12px', fontFamily: 'Quicksand, sans-serif', fontWeight: 700, color: '#7c5cbf', boxShadow: '0 2px 12px rgba(155,127,212,0.25)', whiteSpace: 'nowrap' }}>
             meet your personal assistant!
           </div>
         )}
@@ -139,7 +139,7 @@ const Chatbot = ({ events, darkMode, onAddEvent, onDeleteEvent }) => {
       </div>
 
       {open && (
-        <div style={{ position: 'fixed', bottom: '100px', right: '28px', width: '340px', height: '480px', background: darkMode ? 'rgba(15,5,35,0.95)' : 'rgba(255,255,255,0.95)', backdropFilter: 'blur(20px)', borderRadius: '24px', border: darkMode ? '1px solid rgba(180,150,255,0.15)' : '1px solid rgba(255,255,255,0.95)', boxShadow: '0 8px 40px rgba(150,100,220,0.25)', display: 'flex', flexDirection: 'column', zIndex: 50, overflow: 'hidden' }}>
+        <div style={{ position: 'fixed', bottom: '100px', left: '28px', width: '340px', height: '480px', background: darkMode ? 'rgba(15,5,35,0.95)' : 'rgba(255,255,255,0.95)', backdropFilter: 'blur(20px)', borderRadius: '24px', border: darkMode ? '1px solid rgba(180,150,255,0.15)' : '1px solid rgba(255,255,255,0.95)', boxShadow: '0 8px 40px rgba(150,100,220,0.25)', display: 'flex', flexDirection: 'column', zIndex: 50, overflow: 'hidden' }}>
           <div style={{ padding: '16px 20px', borderBottom: darkMode ? '1px solid rgba(180,150,255,0.1)' : '1px solid rgba(180,150,220,0.15)', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <img src={darkMode ? '/mascots/moon_happy.png' : '/mascots/sun_happy.png'} alt="mascot" style={{ width: '36px', height: '36px', objectFit: 'contain' }} />
             <div>

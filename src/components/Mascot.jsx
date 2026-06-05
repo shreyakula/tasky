@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 const SUN_IMAGES = ['sun_happy','sun_sleepy','sun_excited','sun_lucky','sun_flirty','sun_doubt']
 const MOON_IMAGES = ['moon_happy','moon_sleepy','moon_excited','moon_lucky','moon_flirty','moon_doubt']
 const LEFT_POSITIONS = ['6%','18%','30%','42%','54%','66%','72%']
-const SIZE = 280
 
 const Mascot = ({ darkMode }) => {
   const [state, setState] = useState({ img: null, left: '30%', visible: false, key: 0 })
@@ -12,6 +11,8 @@ const Mascot = ({ darkMode }) => {
   const lastPosIdx = useRef(-1)
   const darkRef = useRef(darkMode)
   const runIdRef = useRef(0)
+  const isMobile = window.innerWidth < 768
+  const SIZE = isMobile ? 80 : 280
 
   useEffect(() => {
     darkRef.current = darkMode
@@ -70,6 +71,43 @@ const Mascot = ({ darkMode }) => {
   }, [darkMode])
 
   if (!state.img) return null
+
+  if (isMobile) {
+    return (
+      <div style={{
+        width: '100%',
+        height: '90px',
+        position: 'relative',
+        overflow: 'hidden',
+        marginBottom: '8px',
+      }}>
+        <div style={{
+          position: 'absolute',
+          left: state.left,
+          bottom: 0,
+          width: SIZE + 'px',
+          height: SIZE + 'px',
+          pointerEvents: 'none',
+          transform: state.visible ? 'translateY(0%)' : 'translateY(110%)',
+          transition: state.visible
+            ? 'transform 0.9s cubic-bezier(0.22,1.4,0.36,1)'
+            : 'transform 0.65s cubic-bezier(0.4,0,0.6,1)',
+        }}>
+          <img
+            src={'/mascots/' + state.img + '.png'}
+            alt="mascot"
+            style={{
+              width: SIZE + 'px',
+              height: SIZE + 'px',
+              objectFit: 'contain',
+              animation: state.visible ? 'mascotBounce 2.5s ease-in-out infinite' : 'none',
+              filter: 'drop-shadow(0 4px 14px rgba(160,120,200,0.25))',
+            }}
+          />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div style={{

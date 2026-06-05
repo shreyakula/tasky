@@ -230,15 +230,16 @@ const App = () => {
           </div>
         </div>
         <div className="app-body">
-          <Sidebar
-            onDateSelect={handleDateSelect}
-            selectedDate={selectedDate}
-            timezone={timezone}
-            onTimezoneChange={setTimezone}
-          />
-          <div className="calendar-container" ref={calendarRef}>
-            <Mascot darkMode={darkMode} />
-            <Calendar
+  <Sidebar
+    onDateSelect={handleDateSelect}
+    selectedDate={selectedDate}
+    timezone={timezone}
+    onTimezoneChange={setTimezone}
+  />
+  {window.innerWidth < 768 && <Mascot darkMode={darkMode} />}
+  <div className="calendar-container" ref={calendarRef}>
+    {window.innerWidth >= 768 && <Mascot darkMode={darkMode} />}
+    <Calendar
               events={events}
               onCellClick={handleCellClick}
               onDeleteEvent={handleDeleteEvent}

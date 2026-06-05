@@ -848,3 +848,93 @@
     padding: 4px 8px !important;
   }
 }
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 12px !important;
+    padding-bottom: 100px !important;
+  }
+
+  .app-header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 12px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .tasky-title {
+    font-size: 28px !important;
+  }
+
+  .week-of-label {
+    display: none !important;
+  }
+
+  .app-body {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 12px !important;
+  }
+
+  .mini-calendar {
+    margin-bottom: 10px !important;
+  }
+
+  .calendar-container {
+    padding-top: 80px !important;
+    width: 100% !important;
+    order: 2 !important;
+  }
+
+  .calendar-wrapper {
+    padding: 10px !important;
+  }
+
+  .calendar-scroll-container {
+    height: 450px !important;
+  }
+
+  .calendar-grid {
+    min-width: 420px !important;
+  }
+
+  .day-date-num {
+    font-size: 13px !important;
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  .day-name {
+    font-size: 8px !important;
+  }
+
+  .time-gutter {
+    min-width: 44px !important;
+  }
+
+  .time-slot {
+    font-size: 9px !important;
+    padding-right: 3px !important;
+  }
+
+  .calendar-week-label {
+    font-size: 12px !important;
+  }
+
+  .timezone-display {
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+
+  .mode-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+  }
+}

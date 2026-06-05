@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 const SUN_IMAGES = ['sun_happy','sun_sleepy','sun_excited','sun_lucky','sun_flirty','sun_doubt']
 const MOON_IMAGES = ['moon_happy','moon_sleepy','moon_excited','moon_lucky','moon_flirty','moon_doubt']
 const LEFT_POSITIONS = ['6%','18%','30%','42%','54%','66%','72%']
-const SIZE = 280
+const SIZE = window.innerWidth < 768 ? 120 : 280
+const TRANSLATE = window.innerWidth < 768 ? '60px' : '220px'
 
 const Mascot = ({ darkMode }) => {
   const [state, setState] = useState({
@@ -99,9 +100,9 @@ const Mascot = ({ darkMode }) => {
         height: SIZE + 'px',
         zIndex: 4,
         pointerEvents: 'none',
-        transform: state.visible
-          ? 'translateY(calc(220px - ' + SIZE + 'px + 20px))'
-          : 'translateY(-115%)',
+        transform: isVisible
+        ? 'translateY(calc(' + TRANSLATE + ' - ' + SIZE + 'px + 20px))'
+        : 'translateY(-115%)',
         transition: state.visible
           ? 'transform 0.9s cubic-bezier(0.22,1.4,0.36,1)'
           : 'transform 0.65s cubic-bezier(0.4,0,0.6,1)',

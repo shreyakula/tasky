@@ -76,7 +76,7 @@ const Mascot = ({ darkMode }) => {
     return (
       <div style={{
         width: '100%',
-        height: '90px',
+        height: '1px',
         position: 'relative',
         overflow: 'hidden',
         marginBottom: '8px',
@@ -88,7 +88,7 @@ const Mascot = ({ darkMode }) => {
           width: SIZE + 'px',
           height: SIZE + 'px',
           pointerEvents: 'none',
-          transform: state.visible ? 'translateY(0%)' : 'translateY(110%)',
+          transform: state.visible ? 'translateY(10%)' : 'translateY(120%)',
           transition: state.visible
             ? 'transform 0.9s cubic-bezier(0.22,1.4,0.36,1)'
             : 'transform 0.65s cubic-bezier(0.4,0,0.6,1)',

@@ -946,3 +946,23 @@
 .app-content {
   min-height: 100vh !important;
 }
+
+@media (max-width: 768px) {
+  .calendar-scroll-container {
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .calendar-grid {
+    min-width: 650px !important;
+  }
+
+  .calendar-body {
+    min-width: 650px !important;
+  }
+
+  .calendar-header {
+    min-width: 650px !important;
+  }
+}

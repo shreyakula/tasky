@@ -770,3 +770,81 @@
 .app-content {
   padding-bottom: 220px !important;
 }
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 16px !important;
+  }
+
+  .app-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .tasky-title {
+    font-size: 36px !important;
+  }
+
+  .app-body {
+    flex-direction: column !important;
+    gap: 12px;
+  }
+
+  .sidebar {
+    min-width: unset !important;
+    width: 100% !important;
+  }
+
+  .mini-cal-grid {
+    grid-template-columns: repeat(7, 1fr) !important;
+  }
+
+  .calendar-container {
+    padding-top: 100px !important;
+    width: 100% !important;
+  }
+
+  .calendar-wrapper {
+    padding: 12px !important;
+    border-radius: 16px !important;
+  }
+
+  .calendar-scroll-container {
+    height: 500px !important;
+  }
+
+  .calendar-grid {
+    min-width: 500px !important;
+  }
+
+  .day-date-num {
+    font-size: 14px !important;
+  }
+
+  .day-name {
+    font-size: 9px !important;
+  }
+
+  .time-gutter {
+    min-width: 50px !important;
+  }
+
+  .time-slot {
+    font-size: 9px !important;
+    padding-right: 4px !important;
+  }
+
+  .calendar-week-label {
+    font-size: 13px !important;
+  }
+
+  .header-right {
+    gap: 8px !important;
+  }
+
+  .timezone-display {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+}
